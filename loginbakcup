@@ -1,0 +1,61 @@
+   <%
+          try
+                   {
+          HttpSession sess=request.getSession();
+          if((sess.getAttribute("login").equals("")))
+                           {
+                                    HttpSession sessobj= request.getSession(true);
+                                    sessobj.setAttribute("login", "ok");
+                           }
+          else if((sess.getAttribute("login").equals("ok")))
+       {
+    %>
+<c:redirect url="signup.jsp"></c:redirect>
+    
+    <%
+       }
+              }
+          catch(Exception e)
+                                   {
+                           }
+          if(!(name.equals("")))
+                           {
+          try {
+            //  processRequest(request, response);
+              
+               Connection conn = com.Database.DB.getConnection();
+               Statement stmt= conn.createStatement();
+               String query="select count(*) from emp where Ename='" + name + "' and Job='" +  password + "'";
+                ResultSet rs = stmt.executeQuery (query);
+                String result=""; 
+                while(rs.next())
+                 {
+                     result=rs.getString(1);
+                     
+                 }   
+                      if(result.equals("1"))
+                                                   {
+                          %>
+                      <c:redirect url="testajax.jsp"></c:redirect>
+                          <%
+                                                   }
+                      else
+                         {
+%>
+<h1>invalid</h1>       
+                          <%
+                          
+                
+                      }                conn.close();
+    conn = null;
+        } catch (Exception ex) {
+            out.println(ex);
+        }
+
+          }
+            
+            
+             
+        
+          %>
+       

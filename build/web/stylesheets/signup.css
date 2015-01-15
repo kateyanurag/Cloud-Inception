@@ -1,0 +1,21 @@
+#overlay_form{
+	position: absolute;
+	border: 5px solid gray;
+	padding: 10px;
+	background: white;
+	
+	
+}
+#pop{
+	display: block;
+	border: 1px solid gray;
+	width: 95px;
+	text-align: center;
+	padding: 6px;
+	border-radius: 5px;
+	text-decoration: none;
+        position: absolute;
+            
+	margin-top: 150px;
+        margin-left: 550px;
+}

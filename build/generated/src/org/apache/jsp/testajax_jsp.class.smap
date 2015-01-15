@@ -1,0 +1,11 @@
+SMAP
+testajax_jsp.java
+JSP
+*S JSP
+*F
++ 0 testajax.jsp
+testajax.jsp
+*L
+5,6:44
+10,22:50
+*E
